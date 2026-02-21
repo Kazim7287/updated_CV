@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Kazim Ahmad - Professional Resume</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+    /* General */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9ecef;
+        color: #343a40;
+        line-height: 1.6;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    a:hover {
+        color: #ffc107;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        background: linear-gradient(180deg, #343a40, #495057);
+        color: #fff;
+        padding: 30px 20px;
+        border-radius: 15px;
+        position: sticky;
+        top: 20px;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .sidebar h2 {
+        font-size: 2rem;
+        color: #ffc107;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+
+    .sidebar .contact-info p {
+        margin: 8px 0;
+        font-size: 0.95rem;
+    }
+
+    .sidebar .contact-info i {
+        color: #ffc107;
+        margin-right: 8px;
+    }
+
+    /* Resume Sections */
+    .resume-section {
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .resume-section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    .section-title {
+        font-weight: 700;
+        border-bottom: 3px solid #ffc107;
+        padding-bottom: 8px;
+        margin-bottom: 18px;
+        font-size: 1.3rem;
+        color: #343a40;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Skills Progress Bars */
+    .skill {
+        margin-bottom: 12px;
+    }
+    .skill-name {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #495057;
+    }
+    .progress {
+        height: 8px;
+        border-radius: 8px;
+    }
+    .progress-bar {
+        background-color: #ffc107;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+        position: relative;
+        margin-left: 15px;
+        padding-left: 15px;
+        border-left: 3px solid #ffc107;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 25px;
+        padding-left: 15px;
+    }
+
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: 0;
+        width: 15px;
+        height: 15px;
+        background-color: #ffc107;
+        border-radius: 50%;
+        border: 3px solid #fff;
+    }
+
+    .experience-title {
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: #343a40;
+    }
+
+    /* Projects */
+    .project-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 15px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    /* Languages */
+    .language-badge {
+        display: inline-block;
+        background: #ffc107;
+        color: #343a40;
+        font-weight: 500;
+        padding: 6px 14px;
+        margin-right: 8px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .sidebar {
+            margin-bottom: 25px;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+<div class="container my-5">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-lg-3">
+            <div class="sidebar">
+                <h2>Muhammad Kazim Ahmad</h2>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Mandani, Charsadda, Pakistan</p>
+                    <p><i class="fas fa-phone"></i> +92 315 9524108</p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:23pwcse2233@uetpeshawar.edu.pk">23pwcse2233@uetpeshawar.edu.pk</a></p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/muhammadkazim-ahmad-038636343" target="_blank">LinkedIn</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://github.com/Kazim7287" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-lg-9">
+            <!-- Summary -->
+            <div class="resume-section">
+                <div class="section-title">Professional Summary</div>
+                <p>Full-Stack Developer with extensive experience in building secure, scalable, and user-centric web applications. Skilled in React, PHP, SQL, and modern frontend frameworks. Experienced in delivering solutions for UK, EU, and remote teams.</p>
+            </div>
+
+            <!-- Skills -->
+            <div class="resume-section">
+                <div class="section-title">Technical Skills</div>
+                <div class="skill">
+                    <div class="skill-name">HTML5 / CSS3 / JS</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">React / Frontend Frameworks</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">PHP / SQL / Backend</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Version Control & Tools</div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="resume-section">
+                <div class="section-title">Professional Experience</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="experience-title">Full-Stack Developer – Islamia College & Local Community College</div>
+                        <ul>
+                            <li>Developed ERP system for admissions, attendance, grading, fee processing & scheduling.</li>
+                            <li>Replaced manual workflows improving efficiency and accuracy.</li>
+                            <li>Built scalable backend with secure database handling.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="experience-title">Frontend Specialist</div>
+                        <ul>
+                            <li>Developed responsive UI for a secure client-supplier web portal.</li>
+                            <li>Built dashboards using React and Ant Design with real-time data.</li>
+                            <li>Enhanced usability, performance, and accessibility.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="experience-title">Full-Stack Developer</div>
+                        <ul>
+                            <li>Created billing and inventory management system for small businesses.</li>
+                            <li>Automated invoice generation and product tracking.</li>
+                            <li>Delivered end-to-end full-stack functionality.</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="experience-title">UI/UX Designer & Developer</div>
+                        <ul>
+                            <li>Designed modern portfolio with animations and 3D elements.</li>
+                            <li>Built custom CMS for content updates.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="resume-section">
+                <div class="section-title">Education</div>
+                <p><strong>BSc Computer System Engineering</strong><br>
+                UET Peshawar (2022–2027)<br>
+                GPA: 3.345</p>
+            </div>
+
+            <!-- Projects -->
+            <div class="resume-section">
+                <div class="section-title">Projects</div>
+                <div class="project-card">College Management System (ERP)</div>
+                <div class="project-card">Invoice Generator System</div>
+                <div class="project-card">Portfolio Website</div>
+            </div>
+
+            <!-- Languages -->
+            <div class="resume-section">
+                <div class="section-title">Languages</div>
+                <span class="language-badge">Urdu (Fluent)</span>
+                <span class="language-badge">English (Intermediate)</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
