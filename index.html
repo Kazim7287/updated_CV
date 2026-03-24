@@ -1,292 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Muhammad Kazim Ahmad - Professional Resume</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Muhammad Kazim Ahmad - Full-Stack Developer Resume</title>
+  <style>
+    /* RESET & BASE — ATS friendly: clean single column, no complex layouts */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-<style>
-    /* General */
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #e9ecef;
-        color: #343a40;
-        line-height: 1.6;
+      background-color: #eef2f5;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.45;
+      padding: 40px 20px;
     }
 
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-    a:hover {
-        color: #ffc107;
-    }
-
-    /* Sidebar */
-    .sidebar {
-        background: linear-gradient(180deg, #343a40, #495057);
-        color: #fff;
-        padding: 30px 20px;
-        border-radius: 15px;
-        position: sticky;
-        top: 20px;
-        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    .resume {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      padding: 2rem 2.2rem;
+      border-radius: 4px;
     }
 
-    .sidebar h2 {
-        font-size: 2rem;
-        color: #ffc107;
-        margin-bottom: 10px;
-        letter-spacing: 1px;
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #111;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
     }
 
-    .sidebar .contact-info p {
-        margin: 8px 0;
-        font-size: 0.95rem;
+    .subhead {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c3e66;
+      margin-top: 0.2rem;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid #2c7da0;
+      padding-left: 10px;
     }
 
-    .sidebar .contact-info i {
-        color: #ffc107;
-        margin-right: 8px;
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 0.75rem 0 0.2rem 0;
+      font-size: 0.9rem;
+      color: #2c3e50;
+      border-bottom: 1px solid #dce6ef;
+      padding-bottom: 0.9rem;
     }
 
-    /* Resume Sections */
-    .resume-section {
-        background: #fff;
-        border-radius: 15px;
-        padding: 30px 25px;
-        margin-bottom: 25px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .contact-bar span {
+      white-space: nowrap;
     }
 
-    .resume-section:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    .contact-bar a {
+      color: #1a4d6b;
+      text-decoration: none;
+    }
+
+    .contact-bar a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 1.3rem;
     }
 
     .section-title {
-        font-weight: 700;
-        border-bottom: 3px solid #ffc107;
-        padding-bottom: 8px;
-        margin-bottom: 18px;
-        font-size: 1.3rem;
-        color: #343a40;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #0b2b3b;
+      border-bottom: 2px solid #cbdbe0;
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.8rem;
     }
 
-    /* Skills Progress Bars */
-    .skill {
-        margin-bottom: 12px;
-    }
-    .skill-name {
-        font-weight: 600;
-        margin-bottom: 4px;
-        color: #495057;
-    }
-    .progress {
-        height: 8px;
-        border-radius: 8px;
-    }
-    .progress-bar {
-        background-color: #ffc107;
+    .exp-item, .project-item, .edu-item {
+      margin-bottom: 1rem;
     }
 
-    /* Experience Timeline */
-    .timeline {
-        position: relative;
-        margin-left: 15px;
-        padding-left: 15px;
-        border-left: 3px solid #ffc107;
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.25rem;
     }
 
-    .timeline-item {
-        position: relative;
-        margin-bottom: 25px;
-        padding-left: 15px;
+    .job-title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #111;
     }
 
-    .timeline-item::before {
-        content: '';
-        position: absolute;
-        left: -10px;
-        top: 0;
-        width: 15px;
-        height: 15px;
-        background-color: #ffc107;
-        border-radius: 50%;
-        border: 3px solid #fff;
+    .date {
+      font-size: 0.85rem;
+      color: #4a627a;
+      font-weight: 400;
     }
 
-    .experience-title {
-        font-weight: 600;
-        font-size: 1.05rem;
-        color: #343a40;
+    .company {
+      font-weight: 600;
+      color: #2c3e66;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
     }
 
-    /* Projects */
-    .project-card {
-        background: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 15px;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    ul {
+      list-style: none;
+      margin-top: 0.3rem;
+      margin-bottom: 0.2rem;
     }
 
-    /* Languages */
-    .language-badge {
-        display: inline-block;
-        background: #ffc107;
-        color: #343a40;
-        font-weight: 500;
-        padding: 6px 14px;
-        margin-right: 8px;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        margin-bottom: 6px;
+    ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #1e2f3e;
     }
 
-    /* Responsive */
-    @media (max-width: 992px) {
-        .sidebar {
-            margin-bottom: 25px;
-        }
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #2c7da0;
+      font-weight: bold;
+      font-size: 1rem;
     }
 
-</style>
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+      margin-top: 0.3rem;
+    }
+
+    .skill-category {
+      flex: 1 1 220px;
+    }
+
+    .skill-category strong {
+      font-weight: 700;
+      display: inline-block;
+      min-width: 85px;
+      color: #0f2c3b;
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+      color: #0f2c3b;
+    }
+
+    .cert-list {
+      columns: 2;
+      column-gap: 2rem;
+      margin-top: 0.2rem;
+    }
+
+    @media (max-width: 580px) {
+      .resume {
+        padding: 1.2rem;
+      }
+      .cert-list {
+        columns: 1;
+      }
+      .contact-bar {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .contact-bar span {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        margin: 0;
+      }
+      .resume {
+        box-shadow: none;
+        padding: 0.2in;
+        max-width: 100%;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<div class="container my-5">
-    <div class="row">
-        <!-- Sidebar -->
-        <div class="col-lg-3">
-            <div class="sidebar">
-                <h2>Muhammad Kazim Ahmad</h2>
-                <div class="contact-info">
-                    <p><i class="fas fa-map-marker-alt"></i> Mandani, Charsadda, Pakistan</p>
-                    <p><i class="fas fa-phone"></i> +92 315 9524108</p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:23pwcse2233@uetpeshawar.edu.pk">23pwcse2233@uetpeshawar.edu.pk</a></p>
-                    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/muhammadkazim-ahmad-038636343" target="_blank">LinkedIn</a></p>
-                    <p><i class="fab fa-github"></i> <a href="https://github.com/Kazim7287" target="_blank">GitHub</a></p>
-                </div>
-            </div>
-        </div>
+<div class="resume">
+  <!-- HEADER -->
+  <h1>MUHAMMAD KAZIM AHMAD</h1>
+  <div class="subhead">Full-Stack Developer | React Specialist | Undergraduate Researcher</div>
+  
+  <div class="contact-bar">
+    <span>📍 Mandani, Charsadda, Pakistan</span>
+    <span>📞 +92 315 9524108</span>
+    <span>✉️ 23pwcse2233@uetpeshawar.edu.pk</span>
+    <span>🔗 github.com/Kazim7287</span>
+    <span>🔗 linkedin.com/in/muhammadkazim-ahmad</span>
+  </div>
 
-        <!-- Main Content -->
-        <div class="col-lg-9">
-            <!-- Summary -->
-            <div class="resume-section">
-                <div class="section-title">Professional Summary</div>
-                <p>Full-Stack Developer with extensive experience in building secure, scalable, and user-centric web applications. Skilled in React, PHP, SQL, and modern frontend frameworks. Experienced in delivering solutions for UK, EU, and remote teams.</p>
-            </div>
+  <!-- SUMMARY: concise, ATS optimized -->
+  <div class="section">
+    <div class="section-title">Professional Summary</div>
+    <p style="font-size:0.92rem; line-height:1.45; margin-bottom:0.2rem;">Full-Stack Developer with hands-on experience in building scalable web applications using <strong>React.js, Core PHP, MySQL, and REST APIs</strong>. Proficient in frontend state management (Redux Toolkit, Context API) and backend system architecture. Currently expanding expertise in Laravel and modern deployment platforms (Vercel, Git). Demonstrated success in developing ERP solutions, automated billing systems, and improving operational efficiency. Experienced in Agile methodologies and collaborative development workflows.</p>
+  </div>
 
-            <!-- Skills -->
-            <div class="resume-section">
-                <div class="section-title">Technical Skills</div>
-                <div class="skill">
-                    <div class="skill-name">HTML5 / CSS3 / JS</div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 95%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-name">React / Frontend Frameworks</div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-name">PHP / SQL / Backend</div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 85%;"></div>
-                    </div>
-                </div>
-                <div class="skill">
-                    <div class="skill-name">Version Control & Tools</div>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 80%;"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Experience -->
-            <div class="resume-section">
-                <div class="section-title">Professional Experience</div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="experience-title">Full-Stack Developer – Islamia College & Local Community College</div>
-                        <ul>
-                            <li>Developed ERP system for admissions, attendance, grading, fee processing & scheduling.</li>
-                            <li>Replaced manual workflows improving efficiency and accuracy.</li>
-                            <li>Built scalable backend with secure database handling.</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="experience-title">Frontend Specialist</div>
-                        <ul>
-                            <li>Developed responsive UI for a secure client-supplier web portal.</li>
-                            <li>Built dashboards using React and Ant Design with real-time data.</li>
-                            <li>Enhanced usability, performance, and accessibility.</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="experience-title">Full-Stack Developer</div>
-                        <ul>
-                            <li>Created billing and inventory management system for small businesses.</li>
-                            <li>Automated invoice generation and product tracking.</li>
-                            <li>Delivered end-to-end full-stack functionality.</li>
-                        </ul>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="experience-title">UI/UX Designer & Developer</div>
-                        <ul>
-                            <li>Designed modern portfolio with animations and 3D elements.</li>
-                            <li>Built custom CMS for content updates.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education -->
-            <div class="resume-section">
-                <div class="section-title">Education</div>
-                <p><strong>BSc Computer System Engineering</strong><br>
-                UET Peshawar (2022–2027)<br>
-                GPA: 3.345</p>
-            </div>
-
-            <!-- Projects -->
-            <div class="resume-section">
-                <div class="section-title">Projects</div>
-                <div class="project-card">College Management System (ERP)</div>
-                <div class="project-card">Invoice Generator System</div>
-                <div class="project-card">Portfolio Website</div>
-            </div>
-
-            <!-- Languages -->
-            <div class="resume-section">
-                <div class="section-title">Languages</div>
-                <span class="language-badge">Urdu (Fluent)</span>
-                <span class="language-badge">English (Intermediate)</span>
-            </div>
-
-        </div>
+  <!-- TECHNICAL SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-list">
+      <div class="skill-category"><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React.js, Context API, Redux Toolkit, Responsive Design</div>
+      <div class="skill-category"><strong>Backend:</strong> Core PHP, Laravel (learning), RESTful APIs, MVC Architecture</div>
+      <div class="skill-category"><strong>Database:</strong> MySQL, SQL, Query Optimization</div>
+      <div class="skill-category"><strong>Tools & DevOps:</strong> Git, GitHub, Vercel, Docker (basic), VS Code, Postman</div>
+      <div class="skill-category"><strong>Methodologies:</strong> Agile, Scrum Framework, SDLC, Git Flow, Version Control</div>
     </div>
-</div>
+  </div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- EXPERIENCE: corrected SID Lab section (joined 2026, no team size mentioned) -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+    
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="job-title">Undergraduate Researcher</span>
+        <span class="date">2026 – Present</span>
+      </div>
+      <div class="company">SID Lab, UET Peshawar</div>
+      <ul>
+        <li>Engaged in research focused on scalable systems and software optimization under faculty supervision.</li>
+        <li>Collaborating on research initiatives exploring efficient computing solutions and emerging technologies.</li>
+        <li>Applying analytical and problem-solving skills to contribute to ongoing lab projects.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="job-title">Full-Stack Developer (ERP & Enterprise Solutions)</span>
+        <span class="date">2023 – Present</span>
+      </div>
+      <div class="company">Academic & Local Projects</div>
+      <ul>
+        <li>Developed a complete College Management System (ERP) using Core PHP and MySQL, automating admissions, attendance tracking, and fee invoicing.</li>
+        <li>Designed an invoice generator system with automated PDF generation and dynamic tax calculations using PHP/SQL.</li>
+        <li>Implemented role-based access control and secure session management across multiple modules.</li>
+        <li>Utilized Git version control and collaborated using Agile/Scrum practices including sprint planning and daily stand-ups.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="job-title">Frontend React Developer</span>
+        <span class="date">2023 – 2024</span>
+      </div>
+      <div class="company">Freelance & Academic Projects</div>
+      <ul>
+        <li>Built responsive admin dashboards with React.js, leveraging Redux Toolkit and Context API for efficient state management.</li>
+        <li>Developed reusable component libraries and integrated REST APIs for real-time data visualization.</li>
+        <li>Deployed multiple frontend applications on Vercel with CI/CD from GitHub repositories.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="job-title">Full-Stack Developer (Billing & Inventory)</span>
+        <span class="date">2022 – 2023</span>
+      </div>
+      <div class="company">Independent Projects</div>
+      <ul>
+        <li>Built a billing and inventory management system using PHP and MySQL with automated invoice generation and stock alerts.</li>
+        <li>Implemented secure authentication, dynamic reporting dashboard, and search/filter functionality.</li>
+        <li>Applied MVC architecture for maintainable and scalable code structure.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <div class="section-title">Key Projects</div>
+    
+    <div class="project-item">
+      <div class="project-title">College Management System (ERP)</div>
+      <ul>
+        <li>Full-stack ERP solution using Core PHP & MySQL managing student records, attendance analytics, fee tracking, and examination module.</li>
+        <li>Implemented role-based portals for Admin, Teachers, and Students with optimized SQL queries for faster reporting.</li>
+      </ul>
+    </div>
+
+    <div class="project-item">
+      <div class="project-title">Smart Invoice Generator System</div>
+      <ul>
+        <li>Billing application with automated invoice generation, PDF export, and itemized tax calculation using PHP and MySQL.</li>
+        <li>Dashboard to manage clients, products, and sales history with integrated REST API support.</li>
+      </ul>
+    </div>
+
+    <div class="project-item">
+      <div class="project-title">React Dashboard & Portfolio Website</div>
+      <ul>
+        <li>Built responsive portfolio and analytics dashboard with React.js, React Router, Context API, and Redux Toolkit.</li>
+        <li>Consumed third-party APIs for dynamic content and deployed on Vercel with high performance scores.</li>
+      </ul>
+    </div>
+
+    <div class="project-item">
+      <div class="project-title">Inventory & Order Management System</div>
+      <ul>
+        <li>Developed inventory system with low-stock alerts, order processing, and transaction management using PHP and MySQL.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="exp-header">
+        <span class="job-title">Bachelor of Science in Computer System Engineering</span>
+        <span class="date">2022 – 2027</span>
+      </div>
+      <div class="company">University of Engineering & Technology (UET), Peshawar</div>
+      <ul>
+        <li>Current GPA: 3.345 / 4.0</li>
+        <li>Coursework: Data Structures, Database Systems, Web Development, Software Engineering, Operating Systems, Computer Networks.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CERTIFICATIONS: includes Agile & Scrum (correctly framed as methodologies/framework) -->
+  <div class="section">
+    <div class="section-title">Certifications & Training</div>
+    <div class="cert-list" style="display: block; columns: 2;">
+      <ul style="margin-bottom: 0;">
+        <li>React State Management (Context API & Redux Toolkit)</li>
+        <li>Laravel Framework (Currently Learning)</li>
+        <li>Deployment using Vercel & CI/CD Fundamentals</li>
+        <li>Agile & Scrum Project Management (Software Development Lifecycle)</li>
+        <li>Critical Thinking in the AI Era – HP LIFE</li>
+        <li>Websites for Business – HP LIFE</li>
+        <li>Git & Version Control (Branching, Collaboration, Workflow)</li>
+        <li>Cisco Networking Career Path – Cisco Networking Academy (80%+ Score)</li>
+        <li>REST API Design & Integration</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- METHODOLOGY: clarifying Agile & Scrum as framework, not a "type" -->
+  <!-- <div class="section">
+    <div class="section-title">Agile & Scrum Expertise</div>
+    <p style="font-size:0.9rem;">Practical experience applying <strong>Agile methodologies</strong> and the <strong>Scrum framework</strong> in project development. Participated in sprint planning, daily stand-ups, retrospectives, and backlog management using tools like Trello and Jira. Familiar with iterative development, user stories, and cross-functional team collaboration to deliver high-quality software solutions efficiently.</p>
+  </div> -->
+
+  <!-- LANGUAGES -->
+  <div class="section">
+    <div class="section-title">Languages</div>
+    <ul style="margin-bottom: 0;">
+      <li><strong>Urdu</strong> – Native / Fluent</li>
+      <li><strong>English</strong> – Professional Working Proficiency</li>
+    </ul>
+  </div>
+</div>
 </body>
 </html>
